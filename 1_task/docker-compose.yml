@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  rabbit:
+    image: "rabbitmq:alpine"
+    
+  producer:
+    build:
+      context: .
+      dockerfile: producerDockerfile
+
+  consumer:
+    build:
+      context: .
+      dockerfile: consumerDockerfile
