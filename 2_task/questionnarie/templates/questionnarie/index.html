@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+    <h1>Список вопросов: </h1>
+    <ol>
+        {% for question in questions %}
+            <li>{{ question.text }}</li>
+        {% endfor %}
+    </ol>
+<form method="POST" action="new_question">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Введите ваш вопрос: </legend>
+        <label>
+            Вопрос:
+            <input type="text" maxlength="200" name="questions">
+        </label>
+        <br>
+        <button>Отправить!</button>
+    </fieldset>
+</form>
+</body>
+</html>
